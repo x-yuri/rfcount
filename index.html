@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Serif', serif;
+        }
+        .graph {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const days = [
+            '2022-02-28', '2022-03-01', '2022-03-02', '2022-03-03', '2022-03-04', '2022-03-05', '2022-03-06',
+            '2022-03-07', '2022-03-08', '2022-03-09', '2022-03-10', '2022-03-11', '2022-03-12', '2022-03-13',
+            '2022-03-14', '2022-03-15', '2022-03-16', '2022-03-17', '2022-03-18', '2022-03-19', '2022-03-20',
+            '2022-03-21'];
+
+        const personnelTrace = {
+            x: days,
+            y: [5300, 5710, 5840, 9000, 9166, 10000, 11000,
+                11000, 12000, 12000, 12000, 12000, 12000, 12000,
+                12000, 13500, 13800, 14000, 14200, 14400, 14700,
+                15000],
+            mode: 'lines+markers',
+            name: 'особовий склад',
+        };
+
+        const tanksTrace = {
+            x: days,
+            y: [191, 198, 211, 217, 251, 269, 285,
+                290, 303, 317, 335, 353, 362, 374,
+                389, 404, 430, 444, 450, 466, 476,
+                498],
+            mode: 'lines+markers',
+            name: 'танки',
+        };
+
+        const bbmTrace = {
+            x: days,
+            y: [816, 846, 862, 900, 939, 945, 985,
+                999, 1036, 1070, 1105, 1165, 1205, 1226,
+                1249, 1279, 1375, 1435, 1448, 1470, 1487,
+                1535],
+            mode: 'lines+markers',
+            name: 'ББМ',
+        };
+
+        const artilleryTrace = {
+            x: days.slice(1),
+            y: [77, 85, 90, 105, 105, 109,
+                117, 120, 120, 123, 125, 135, 140,
+                150, 150, 190, 201, 205, 213, 230,
+                240],
+            mode: 'lines+markers',
+            name: 'артилерійські системи',
+        };
+
+        const mlrsTrace = {
+            x: days.slice(1),
+            y: [24, 40, 42, 50, 50, 50,
+                50, 56, 56, 56, 58, 62, 62,
+                64, 64, 70, 72, 72, 72, 74,
+                80],
+            mode: 'lines+markers',
+            name: 'РСВВ',
+        };
+
+        const ppoTrace = {
+            x: days,
+            y: [5, 7, 9, 11, 18, 19, 21,
+                23, 27, 28, 29, 31, 33, 34,
+                34, 36, 43, 43, 43, 44, 44,
+                45],
+            mode: 'lines+markers',
+            name: 'ППО',
+        };
+
+        const aircraftTrace = {
+            x: days,
+            y: [29, 29, 30, 30, 33, 39, 44,
+                46, 48, 49, 49, 57, 58, 74,
+                77, 81, 84, 86, 93, 95, 96,
+                97],
+            mode: 'lines+markers',
+            name: 'літаки',
+        };
+
+        const helicoptersTrace = {
+            x: days,
+            y: [29, 29, 31, 31, 37, 40, 48,
+                68, 80, 81, 81, 83, 83, 86,
+                90, 95, 108, 108, 112, 115, 118,
+                121],
+            mode: 'lines+markers',
+            name: 'гелікоптери',
+        };
+
+        const vehiclesTrace = {
+            x: days,
+            y: [291, 305, 355, 374, 404, 409, 447,
+                454, 474, 482, 526, 558, 585, 600,
+                617, 640, 819, 864, 879, 914, 947,
+                969],
+            mode: 'lines+markers',
+            name: 'автомобільна техніка',
+        };
+
+        const boatsTrace = {
+            x: days,
+            y: [2, 2, 2, 2, 2, 2, 2,
+                3, 3, 3, 3, 3, 3, 3,
+                3, 3, 3, 3, 3, 3, 3,
+                3],
+            mode: 'lines+markers',
+            name: 'кораблі/катери',
+        };
+
+        const fuelTanksTrace = {
+            x: days,
+            y: [60, 60, 60, 60, 60, 60, 60,
+                60, 60, 60, 60, 60, 60, 60,
+                60, 60, 60, 60, 60, 60, 60,
+                60],
+            mode: 'lines+markers',
+            name: 'ПММ',
+        };
+
+        const bplaTrace = {
+            x: days,
+            y: [3, 3, 3, 3, 3, 3, 4,
+                7, 7, 7, 7, 7, 7, 7,
+                8, 9, 11, 11, 12, 17, 21,
+                24],
+            mode: 'lines+markers',
+            name: 'БПЛА',
+        };
+
+        const specialEquipmentTrace = {
+            x: days.slice(16),
+            y: [10, 10, 11, 11, 12,
+                13],
+            mode: 'lines+markers',
+            name: 'спеціальна техніка',
+        };
+    </script>
+
+    <h1>Орієнтовні втрати противника</h1>
+    <h2>особовий склад:</h2>
+    <div id="personnel" class="graph"></div>
+    <h2>танки, ...:</h2>
+    <div id="g1" class="graph"></div>
+    <h2>артилерійські системи, ...:</h2>
+    <div id="g2" class="graph"></div>
+    <h2>кораблі/катери, ...:</h2>
+    <div id="g3" class="graph"></div>
+    <script>
+        const options = {
+        };
+
+        const personnel = document.getElementById('personnel');
+        Plotly.newPlot(personnel, [personnelTrace], options);
+
+        const g1 = document.getElementById('g1');
+        Plotly.newPlot(g1, [tanksTrace, bbmTrace, vehiclesTrace], options);
+
+        const g2 = document.getElementById('g2');
+        Plotly.newPlot(g2, [
+            artilleryTrace, mlrsTrace, ppoTrace,
+            aircraftTrace, helicoptersTrace,
+            fuelTanksTrace,
+        ], options);
+
+        const g3 = document.getElementById('g3');
+        Plotly.newPlot(g3, [
+            boatsTrace,
+            bplaTrace, specialEquipmentTrace,
+        ], options);
+    </script>
+
+    <h2>посилання на відповідні пости:</h2>
+    28 лютого (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/265981595714300">facebook</a>)<br>
+    1 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/266694132309713">facebook</a>)<br>
+    2 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/267457082233418">facebook</a>)<br>
+    3 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/268141448831648">facebook</a>)<br>
+    4 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/268788692100257">facebook</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/269212588724534">facebook</a>)<br>
+    5 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/269461935366266">facebook</a>)<br>
+    6 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/270094831969643">facebook</a>)<br>
+    7 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/270748861904240">facebook</a>)<br>
+    8 березня (<a href="https://www.facebook.com/MinistryofDefence.UA/posts/271374005175059">facebook</a>)<br>
+    9 березня (<a href="https://t.me/ministry_of_defense_ua/3">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/272030405109419">facebook</a>)<br>
+    10 березня (<a href="https://t.me/ministry_of_defense_ua/50">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/272671305045329">facebook</a>)<br>
+    11 березня (<a href="https://t.me/ministry_of_defense_ua/93">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/273312644981195">facebook</a>)<br>
+    12 березня (<a href="https://t.me/ministry_of_defense_ua/145">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/273981528247640">facebook</a>)<br>
+    13 березня (<a href="https://t.me/ministry_of_defense_ua/191">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/274609648184828">facebook</a>)<br>
+    14 березня (<a href="https://t.me/ministry_of_defense_ua/240">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/275307574781702">facebook</a>)<br>
+    15 березня (<a href="https://t.me/ministry_of_defense_ua/278">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/275924214720038">facebook</a>)<br>
+    16 березня (<a href="https://t.me/ministry_of_defense_ua/322">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/276585821320544">facebook</a>)<br>
+    17 березня (<a href="https://t.me/ministry_of_defense_ua/371">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/277322574580202">facebook</a>)<br>
+    18 березня (<a href="https://t.me/ministry_of_defense_ua/421">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/277964324516027">facebook</a>)<br>
+    19 березня (<a href="https://t.me/ministry_of_defense_ua/458">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/278665924445867">facebook</a>)<br>
+    20 березня (<a href="https://t.me/ministry_of_defense_ua/499">telegram</a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/279385261040600">facebook</a>)<br>
+    21 березня (<a href="https://t.me/ministry_of_defense_ua/542">telegram<a>,
+        <a href="https://www.facebook.com/MinistryofDefence.UA/posts/280027834309676">facebook</a>)<br>
+</body>
+</html>
