@@ -179,6 +179,14 @@
             mode: 'lines+markers',
             name: 'спеціальна техніка',
         };
+
+        const srbmTrace = {
+            x: days.slice(27),
+            y: [2, 4,
+                4, 4, 4, 4, 4],
+            mode: 'lines+markers',
+            name: 'ОТРК',
+        };
     </script>
 
     <h1>Орієнтовні втрати противника за даними Генерального штабу ЗСУ</h1>
@@ -207,7 +215,7 @@
         const g3 = document.getElementById('g3');
         Plotly.newPlot(g3, [
             boatsTrace,
-            bplaTrace, specialEquipmentTrace,
+            bplaTrace, specialEquipmentTrace, srbmTrace,
         ], options);
     </script>
 
