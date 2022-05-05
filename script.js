@@ -1,3 +1,5 @@
+const lang = location.pathname == '/en' ? 'en' : 'ua';
+
 const days = [
     '2022-02-27',
     '2022-02-28', '2022-03-01', '2022-03-02', '2022-03-03', '2022-03-04', '2022-03-05', '2022-03-06',
@@ -25,7 +27,7 @@ const personnelTrace = {
         21900, 22100, 22400, 22800, 23000, 23200, 23500,
         23800, 24200, 24500],
     mode: 'lines+markers',
-    name: 'особовий склад',
+    name: lang == 'en' ? 'personnel' : 'особовий склад',
 };
 
 const tanksTrace = {
@@ -42,7 +44,7 @@ const tanksTrace = {
         884, 918, 939, 970, 986, 1008, 1026,
         1048, 1062, 1077],
     mode: 'lines+markers',
-    name: 'танки',
+    name: lang == 'en' ? 'tanks' : 'танки',
 };
 
 const bbmTrace = {
@@ -59,7 +61,7 @@ const bbmTrace = {
         2258, 2308, 2342, 2389, 2418, 2445, 2471,
         2519, 2567, 2610],
     mode: 'lines+markers',
-    name: 'ББМ',
+    name: lang == 'en' ? 'APV' : 'ББМ',
 };
 
 const artilleryTrace = {
@@ -75,7 +77,7 @@ const artilleryTrace = {
         411, 416, 421, 431, 435, 436, 451,
         459, 475, 491],
     mode: 'lines+markers',
-    name: 'артилерійські системи',
+    name: lang == 'en' ? 'artillery' : 'артилерійські системи',
 };
 
 const mlrsTrace = {
@@ -91,7 +93,7 @@ const mlrsTrace = {
         149, 149, 149, 151, 151, 151, 151,
         152, 162, 163],
     mode: 'lines+markers',
-    name: 'РСВВ',
+    name: lang == 'en' ? 'MLRS' : 'РСВВ',
 };
 
 const ppoTrace = {
@@ -107,7 +109,7 @@ const ppoTrace = {
         69, 69, 71, 72, 73, 77, 80,
         80, 80, 81],
     mode: 'lines+markers',
-    name: 'ППО',
+    name: lang == 'en' ? 'AAW' : 'ППО',
 };
 
 const aircraftTrace = {
@@ -124,7 +126,7 @@ const aircraftTrace = {
         181, 184, 185, 187, 189, 190, 192,
         194, 194, 194],
     mode: 'lines+markers',
-    name: 'літаки',
+    name: lang == 'en' ? 'aircrafts' : 'літаки',
 };
 
 const helicoptersTrace = {
@@ -141,7 +143,7 @@ const helicoptersTrace = {
         154, 154, 155, 155, 155, 155, 155,
         155, 155, 155],
     mode: 'lines+markers',
-    name: 'гелікоптери',
+    name: lang == 'en' ? 'helicopters' : 'гелікоптери',
 };
 
 const vehiclesTrace = {
@@ -158,7 +160,7 @@ const vehiclesTrace = {
         1566, 1643, 1666, 1688, 1695, 1701, 1796,
         1824, 1843, 1867],
     mode: 'lines+markers',
-    name: 'автомобільна техніка',
+    name: lang == 'en' ? 'vehicles' : 'автомобільна техніка',
 };
 
 const boatsTrace = {
@@ -175,7 +177,7 @@ const boatsTrace = {
         8, 8, 8, 8, 8, 8, 8,
         8, 10, 10],
     mode: 'lines+markers',
-    name: 'кораблі/катери',
+    name: lang == 'en' ? 'boats/cutters' : 'кораблі/катери',
 };
 
 const fuelTanksTrace = {
@@ -191,7 +193,7 @@ const fuelTanksTrace = {
         76, 76, 76, 76, 76, 76, 76,
         76, 76, 76, 76, 76, 76],
     mode: 'lines+markers',
-    name: 'ПММ',
+    name: lang == 'en' ? 'fuel tanks' : 'ПММ',
 };
 
 const bplaTrace = {
@@ -208,7 +210,7 @@ const bplaTrace = {
         201, 205, 207, 215, 229, 232, 245,
         271, 291, 303],
     mode: 'lines+markers',
-    name: 'БПЛА',
+    name: lang == 'en' ? 'UAV' : 'БПЛА',
 };
 
 const specialEquipmentTrace = {
@@ -222,7 +224,7 @@ const specialEquipmentTrace = {
         28, 31, 31, 31, 31, 32, 32,
         38, 38, 38],
     mode: 'lines+markers',
-    name: 'спеціальна техніка',
+    name: lang == 'en' ? 'special equipment' : 'спеціальна техніка',
 };
 
 const srbmTrace = {
@@ -234,7 +236,7 @@ const srbmTrace = {
         4, 4, 4, 4, 4, 4, 4,
         4, 4, 4, 4, 4, 4],
     mode: 'lines+markers',
-    name: 'ОТРК',
+    name: lang == 'en' ? 'SRBM' : 'ОТРК',
 };
 
 const missilesTrace = {
@@ -242,7 +244,7 @@ const missilesTrace = {
     y: [84,
         84, 84, 87],
     mode: 'lines+markers',
-    name: 'крилаті ракети',
+    name: lang == 'en' ? 'cruise missiles' : 'крилаті ракети',
 };
 
 
