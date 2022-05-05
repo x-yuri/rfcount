@@ -1,4 +1,4 @@
-const lang = location.pathname == '/en' ? 'en' : 'ua';
+const lang = location.pathname == '/ua' ? 'ua' : 'en';
 
 const days = [
     '2022-02-27',
