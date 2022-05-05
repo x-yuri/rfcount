@@ -1,0 +1,13 @@
+body {
+    font-family: 'Noto Serif', serif;
+    margin: 10px 30px;
+}
+.lang-switcher {
+    float: right;
+}
+.graph {
+    width: 100%;
+    height: 500px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
