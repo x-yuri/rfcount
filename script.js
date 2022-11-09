@@ -634,17 +634,19 @@ const personnel = document.getElementById('personnel');
 Plotly.newPlot(personnel, [personnelTrace], options);
 
 const g1 = document.getElementById('g1');
-Plotly.newPlot(g1, [tanksTrace, bbmTrace, vehiclesTrace], options);
+Plotly.newPlot(g1, [
+    tanksTrace, bbmTrace, vehiclesTrace, bplaTrace, artilleryTrace
+], options);
 
 const g2 = document.getElementById('g2');
 Plotly.newPlot(g2, [
-    artilleryTrace, mlrsTrace, ppoTrace,
+    mlrsTrace, ppoTrace,
     aircraftTrace, helicoptersTrace,
-    fuelTanksTrace, missilesTrace,
+    specialEquipmentTrace, fuelTanksTrace, missilesTrace,
 ], options);
 
 const g3 = document.getElementById('g3');
 Plotly.newPlot(g3, [
     boatsTrace,
-    bplaTrace, specialEquipmentTrace, srbmTrace,
+    srbmTrace,
 ], options);
