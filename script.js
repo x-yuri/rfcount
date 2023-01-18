@@ -790,3 +790,5 @@ Plotly.newPlot(g3, [
     boatsTrace,
     srbmTrace,
 ], options);
+
+document.querySelector('h1').innerHTML += ' (' + days.length + ')';
