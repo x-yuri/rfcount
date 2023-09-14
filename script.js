@@ -961,6 +961,13 @@ const boatsTrace = {
     name: lang == 'en' ? 'boats/cutters' : 'кораблі/катери',
 };
 
+const submarinesTrace = {
+    x: days.slice(564),
+    y: [],
+    mode: 'lines+markers',
+    name: lang == 'en' ? 'submarines' : 'підводні човни',
+};
+
 const fuelTanksTrace = {
     x: days,
     y: [60,
@@ -1265,6 +1272,7 @@ const g3 = document.getElementById('g3');
 Plotly.newPlot(g3, [
     boatsTrace,
     srbmTrace,
+    submarinesTrace,
 ], options);
 
 document.querySelector('h1').innerHTML += ' (' + days.length + ')';
